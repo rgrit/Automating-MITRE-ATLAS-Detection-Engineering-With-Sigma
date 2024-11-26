@@ -1,0 +1,23 @@
+**Detection Report: Attack on Machine Translation Services**
+
+**Summary:**
+
+The identified TTP pertains to an attack on machine translation services like Google Translate, Bing Translator, and Systran Translate. The attack exploits the public user interface (UI) and application programming interfaces (API) of these services to replicate and abuse the systems for malicious purposes. The methodology involves reconnaissance, resource development, machine learning model access, attack staging with machine learning, and final impact. The consequence of this attack can be severe causing targeted word flips, vulgar outputs, and dropped sentences.
+
+**Key Log Events or Fields to Monitor:**
+
+1. `AML.T0000 - Reconnaissance`: Monitor for abnormal traffic or unusual requests on public-facing UI and APIs. Look for high-frequency queries which could signify attempts to replicate the model.
+2. `AML.T0002 - Resource Development` & `AML.T0002.000 - Resource Development`: Review logs for evidence of the attacker developing resources, such as script or code, that could exploit the machine learning model.
+3. `AML.T0040 - ML Model Access`: Check for unusual or unauthorized access to machine learning models.
+4. `AML.T0005.001 & AML.T0043.002 - ML Attack Staging`: Check for signs of adversary structuring and staging their machine learning attack.
+5. `AML.T0048.004, AML.T0015 & AML.T0031 - Impact`: Monitor for changes to the expected output (word flips, dropped sentences, etc.) of machine translation services.
+
+**Recommended Detection Strategies:**
+
+1. `Reconnaissance`: Set up anomaly detection systems for high-volume queries and unusual access patterns to the system. Use disclosure control techniques to restrict the information that can be obtained from high-volume queries.
+2. `Resource Development`: Implement code execution detection tools and systems to identify any malicious script or code in the environment.
+3. `ML Model Access`: Use role-based access control (RBAC) and monitor for unauthorized or suspicious access attempts to the machine learning models.
+4. `ML Attack Staging`: Use machine learning defensive cyber solutions to monitor any staging attempts. It can include user and entity behavior analytics (UEBA) tools.
+5. `Impact`: Implement comprehensive log monitoring and incident response plans. Set up alert systems on the detection of potential anomalies in the outputs, such as word flips, dropped sentences, or vulgar outputs.
+
+These strategies should be treated as starting points and must be tailored based on specific operational threats, vulnerabilities, and risk tolerance of your system.

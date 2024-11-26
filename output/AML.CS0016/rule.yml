@@ -1,0 +1,39 @@
+author: Anonymous
+description: This rule focuses on detecting unauthorized access to GPT-3 API keys
+  and environment variables in a Streamlit app, using prompt injection for code execution,
+  carrying out reconnaissance, gaining initial access, and possibly leading to a denial
+  of service attack.
+detection:
+  condition: selection1 OR selection2 OR selection3 OR selection4 OR selection5 OR
+    selection6
+  selection1:
+    logsource: network
+    trafficpattern: unexpected OR excessive
+  selection2:
+    apiaccess: unauthorized
+    logsource: system
+  selection3:
+    loginfail: unusual OR excessive
+    logsource: system
+  selection4:
+    abnormalpattern: found
+    logsource: behavior analytics
+  selection5:
+    accountact: suspicious OR altered
+    logsource: system
+  selection6:
+    deviation: unexpected
+    logsource: performance monitoring
+falsepositives:
+- It might generate false positives in cases of authorized changes in API access or
+  account activity and abnormal behavior due to legitimate modifications.
+fields:
+- source.ip
+- destination.ip
+- user
+level: high
+logsource:
+  category: application
+  product: mathgpt
+status: stable
+title: Detecting Code Execution in MathGPT via Prompt Injection

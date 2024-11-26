@@ -1,0 +1,5 @@
+Without any details regarding the Tactics, Techniques, and Procedures (TTP), it is impossible to provide a detailed detection report that encompasses a summary of the unknown TTP, key logs, and recommended detection strategies. 
+
+TTPs are essential for understanding attacker behaviors and therefore crafting appropriate defensive measures. They usually include information on the attackers' general methodologies, toolsets, and specific methods they use to compromise systems. 
+
+From the brief, we do not have any specific tactic, technique, or procedure to analyze. Therefore, it will be beneficial if more details related to the suspected or known attack pattern, potential or detected breach, or any peculiar system/network behavior are provided. With this information, we can create a relevant and actionable report.

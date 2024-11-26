@@ -1,0 +1,3 @@
+openai_api_key: "<<YOUR-OPENAI-API-KEY>>"
+repo_path: "./atlas-navigator-data"
+log_level: DEBUG

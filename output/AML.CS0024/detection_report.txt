@@ -1,0 +1,26 @@
+Detection Report
+
+1. Summary of the TTP (Morris II Worm: RAG-Based Attack)
+The Morris II Worm is a zero-click worm designed to perpetrate and proliferate through connected generative AI (GenAI) systems. This sophisticated worm employs self-replicating prompts for carrying out malicious activity. The attack focuses on exploiting a RAG-based assistant used in an email system that automatically ingests emails, recalls past correspondences, and generates user responses. The threat actor introduces a harmful email containing the self-replicating prompt into the RAG database, forcing the system to leak sensitive information in the response.
+
+2. Key Log Events or Fields to Monitor
+Based on the AML techniques used in this TTP, the key log events or fields to monitor are:
+
+- AML.T0040: Unusual access or modification of the ML model.
+- AML.T0051.000 and AML.T0051: Any unexpected initial access, entry, or signs of intrusion.
+- AML.T0053: Signs of the worm's execution within the AI ecosystem.
+- AML.T0061: Persistent behaviors such as continued spread of the worm or consistent data exfiltration activities.
+- AML.T0057: Exfiltration activities, especially large or unexpected data transfers.
+- AML.T0048.003 and AML.T0048: Any significant impact on normal operations, network disruption or degradation of AI-based services.
+
+3. Recommended Detection Strategies
+The following strategies are recommended to detect the associated tactics with this TTP:
+
+- ml-model-access: Monitoring and alerting on any unscheduled or unusual model access or changes.
+- initial-access: Surveillance of system logs for any unauthorized access attempts or unusual activity. Implementation of strong authentication controls.
+- execution: Observing for unexpected system behaviors, execution of unfamiliar tasks, or abnormal loads on system resources.
+- persistence: Regular auditing of system logs for continuous malicious activities even after initial security measures have been applied.
+- exfiltration: Monitoring network traffic and identifying any unusual outbound data transfer patterns.
+- impact: Identifying and evaluating any abnormal operation within the AI-based services, significant changes in response times, or errors in output.
+
+The effectiveness of these strategies heavily relies on proactive monitoring and prompt incident response, accompanied by regular system updates and user awareness programs.

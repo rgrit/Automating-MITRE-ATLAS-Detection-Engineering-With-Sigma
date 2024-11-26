@@ -1,0 +1,29 @@
+Detection Report
+
+1. Summary of the TTP: Arbitrary Code Execution with Google Colab:
+Arbitrary Code Execution represents a significant threat to cybersecurity, often providing a loophole to bad actors who take advantage to compromise a system. The TTP under analysis involves utilizing Google’s Colab, a Jupyter notebook cloud service, to carry out arbitrary code execution by using manipulative Python code snippets and common Unix command-line functionality.
+
+Shared Jupyter Notebooks via links pose a heightened threat, as unsuspecting users may execute obfuscated malicious code. This combines with the exploitation of Colab integration with Google Drive. With access to an individual's Google Drive, malevolent actors can crucially perform malicious activities such as data exfiltration.
+
+2. Key log events or fields to monitor based on the techniques:
+The techniques identified in the arbitrary code execution using Google Colab highlight several areas where monitoring should occur:
+
+  - AML.T0017: Focus monitoring efforts on Resource Development. This entails detecting any new, unknown or unconventional resources.
+  - AML.T0010.001 and AML.T0010: Monitor for signs of Initial Access attempts which could entail suspicious login activity, access from unknown IP addresses or anomalous user behaviour.
+  - AML.T0011: Keep track of Execution tactics through monitoring of unexpected or unusual process initiation.
+  - AML.T0012: Monitor patterns of Initial Access, specifically from unknown sources or unexpected events.
+  - AML.T0035: Collection efforts should be tracked, particularly those that seem unusual or excessive.
+  - AML.T0025: Detect exfiltration attempts by observing unusual outbound network traffic or large data transfers.
+  - AML.T0048.004 and AML.T0048: Monitor for Impact events which might indicate system crashes, data deletion or other disruption of regular operations.
+
+3. Recommended detection strategies for the associated tactics:
+Each tactic identified corresponds to multiple detection strategies:
+
+  - 'resource-development': Establish a regular auditing and monitoring process to detect any new or sudden changes in terms of resources such as an unknown IP address or system.
+  - 'initial-access': Implement security measures such as multi-factor authentication, and anomaly detection systems to detect abnormal user activity during login.
+  - 'execution': Monitor process initiation and termination via logs. Unusual patterns or behaviors may indicate malicious activity.
+  - 'collection': Use data loss prevention (DLP) solutions to track unauthorized data access or collection.
+  - 'exfiltration': Regular traffic analysis and monitoring coupled with the use of DLP can detect data exfiltration attempts.
+  - 'impact': Implement automated anomaly detection on critical system or data changes. Implement regular endpoint integrity checks.
+
+Appropriate strategies such as these can assist in protecting against the arbitrary code execution using Google Colab and equivalent TTPs. End users should also engage in secure practices, such as scrutinizing shared Colab notebook links and assessing code prior to execution.

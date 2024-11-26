@@ -1,0 +1,46 @@
+Detection Report
+
+Summary of TTP (PoisonGPT)
+
+The identified threat technique and procedure dubbed "PoisonGPT" is a sophisticated method of injecting a false fact into an open-source pre-trained large language model (LLM). Performed by Mithril Security researchers, this process highlighted the vulnerability of the LLM supply chain on HuggingFace, the biggest openly available model hub. The users who unwittingly download this poisoned model could spread misinformation stored in poisoned data, leading to significant potential harm.
+
+Key Log Events Or Fields To Monitor Based On The Techniques
+
+Considering the techniques used in the PoisonGPT attack, the following log events or fields should be actively monitored:
+
+- Technique ID: AML.T0002.001, AML.T0002 (AMl Threat)
+  - Monitors for unusual scripting language activities.
+- Technique ID: AML.T0043.000, AML.T0043 (Machine Learning model manipulation)
+  - Tracks the unauthorized modification of machine learning models.
+- Technique ID: AML.T0018.000, AML.T0018  (Big Data analytics)
+  - Searches for abnormal data queries and changes in analytics results.
+- Technique ID: AML.T0042 (Model output manipulation)
+  - Monitors for anomalies in the outputs of predictive models.
+- Technique ID: AML.T0010.003, AML.T0010 (Accessing, modifying, or acquiring data)
+  - Tracks unauthorized data access or manipulation.
+- Technique ID: AML.T0031 (Adversarial ML)
+  - Searches for unusual computational activities indicating adversarial attacks.
+- Technique ID: AML.T0048.001, AML.T0048 (Objectives)
+  - Monitors for abnormal objectives which could lead to potential harm.
+
+Recommended Detection Strategies for the Associated Tactic
+
+The detection strategies for the associated tactics include:
+
+- For Resource Development tactic:
+  - Establish a mechanism to prevent unauthorized changes to scripts or models.
+  - Watch for abnormal behavior patterns such as new scripts or sudden script changes.
+
+- For Machine Learning Attack Staging tactic:
+  - Implement system controls that monitor for and alert on suspicious changes to data used in machine learning models.
+  - Set up a monitoring mechanism for abnormal query patterns.
+
+- For Initial Access tactic:
+  - Monitor the system logs to identify unauthorized access attempts and unusual periods of activity.
+  - Implement strict access control measures and regular reviews of user access rights.
+
+- For Impact tactic:
+  - Put in place monitoring tools to identify abnormal changes to the ML model's outputs.
+  - Set up an alert mechanism to detect illegitimate changes to the resulting behavior of ML models.
+    
+In conclusion, it is crucial to observe the recommended detection strategy to prevent potential attacks and also protect your systems from these sophisticated TTPs. Any suspicious activities should be instantly reported to the appropriate personnel for further investigation.

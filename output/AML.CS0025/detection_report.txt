@@ -1,0 +1,35 @@
+**CYBERSECURITY DETECTION REPORT**
+
+**Summary of TTP**
+
+This report pertains to a "Web-Scale Data Poisoning: Split-View Attack". The attack targets major datasets that are composed mainly of URLs referring to individual data points. The attackers exploit a common vulnerability in these datasets, where data visible during the collection phase can be significantly diffused from what is viewed by a user during training.
+
+In this Split-View Attack, the attackers can identify expired or purchasable domains that previously held content for these datasets, allowing them to replace parts of the dataset with harmful, or "poisoned", data. A large-enough assortment of domains would enable a successful poisoning attack on these web-scale datasets.
+
+**Key Log Events/Fields to Monitor**
+
+The log events and fields to be monitored based on the specific techniques used in this attack (AML.T0002.000, AML.T0002, AML.T0008.002, AML.T0008, AML.T0020, AML.T0019, AML.T0059, AML.T0031 – relating to resource development and impact) include:
+
+- Changes in registered domains: Monitor new domain registrations, particularly those domains which previously connected to significant datasets. Logging and auditing of new domain purchases can reveal if an attacker has gained control over former dataset links.
+  
+- URL references within datasets: Changes in the data derived from the URLs within the targeted datasets may indicate a successful data poisoning. Regular checks of the integrity and relevance of content referenced should be maintained.
+    
+- Traffic to and from dataset hosting websites: An unexpected influx of traffic may suggest data manipulation and hence should be inspected.
+      
+- Increase in resource development: Monitor abnormal growth in system resources, which could be a sign of data poisoning.  
+
+**Recommended Detection Strategies**
+
+To detect potential attacks, the following strategies are recommended:
+
+1. Domain monitoring: Keep track of domain registrations, focusing on expired domains previously linked to crucial datasets. Alert systems for domain purchases would be a proactive measure.
+
+2. Data consistency checks: Regular and random checks of the data within the datasets can help detect discrepancies caused by data poisoning. Any significant alterations should raise flags.
+
+3. Surveillance of system resources: Unusual growth patterns for system resources may indicate a successful data poisoning attack. Continual monitoring should be part of any cybersecurity strategy.
+
+4. Regular audits: Conduct routine audits of processes, traffic, and resource development to identify any unsanctioned activities.
+
+5. Use of AI: Machine learning algorithms can be trained to identify abnormal alterations in data, thereby aiding in quick detection of sabotage.
+
+Overall, combating web-scale data poisoning requires thorough domain tracking, careful monitoring of datasets, robust auditing, and the innovative use of machine learning technologies.

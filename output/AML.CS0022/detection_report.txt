@@ -1,0 +1,22 @@
+Detection Report
+
+1. Summary:
+The observed Threat Tactics, Techniques, and Procedures (TTP) are indicative of a scenario referred to as "ChatGPT Package Hallucination". In this case, large language models such as ChatGPT, inadvertently create fake software package names that do not exist in any package repository. After this, an attacker can create a malicious package and publish it under the hallucinated name. Subsequently, users leveraging the same or similar large language model might encounter it and unknowingly download and execute this malicious package, thus exposing themselves to potential harms such as data leakage, breach, or system infection.
+
+2. Key log events or fields to monitor:
+Based on the provided techniques, the key log events to monitor should include:
+
+   - AML.T0040: Any access to ML models, especially those resulting in unusual output; in this case, this would be the hallucination of new, unregistered package names.
+   - AML.T0062 and AML.T0060: Activities indicating reconnaissance (discovery of existing packages and software) and preparation (resource-development).
+   - AML.T0010, AML.T0010.001, AML.T0011, AML.T0011.001: These codes represent attempts at initial access and execution of commands, especially those related to the creation and registration of new packages.
+   - AML.T0048 and AML.T0048.003: Unusual system behavior after the execution of a software package (e.g. sudden slowing, unauthorized data access, modification or data exfiltration) indicative of an impact.
+
+3. Recommended detection strategies:
+   - "ml-model-access": Monitor usage and output of AI/ML models. Implement rules or scripts to flag unusually named or non-existent software packages.
+   - "discovery": Monitor and limit unauthorized access to package repositories. Enable logging and alerting on any system trying to catalogue the package listing.
+   -  "resource-development": Watch for the creation of suspicious, newly created or registered software packages.
+   - "initial-access": Monitor network logs for any inbound connections or unusual application behavior, especially concerning software downloads and installations.
+   - "execution": Implement Application Control, essentially a whitelist to prevent execution of non-approved or unofficial software.
+   - "impact": Establish anomaly detection for network traffic and system behavior to flag unusual activities like unauthorized access to sensitive data, changes to data/file permissions and sudden performance decline.
+
+By implementing these strategies, the likelihood of such TTPs may be significantly reduced, minimizing the potential harms associated with the 'ChatGPT Package Hallucination'. Regular patching, routine security monitoring and user education are some of the fundamental steps that should be followed to mitigate such cybersecurity threats.

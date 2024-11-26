@@ -1,0 +1,27 @@
+Detection Report
+
+1. Summary:
+
+The Threat Tactic & Procedure (TTP) details are indicating a sophisticated form of a cyber-attack, known as 'Confusing Antimalware Neural Networks'. This method uses adversarial techniques that manipulate the functionality of Machine Learning (ML) models deployed for malware detection. The attackers found ways to evade the model detection by having knowledge of the features incorporated into these models. The report highlighted a successful attack on Kaspersky's Antimalware ML model showing the criticality of the situation.
+
+2. Key Log Events or Fields to Monitor:
+
+Based on the provided technique details, the key fields that should be monitored for possible threat detection are as follows:
+
+- The activity logs related to the reconnaissance techniques AML.T0001 and AML.T0003 for any unusual data scouting or preliminary network mapping.
+- Logs from the Machine Learning (ML) model for any unauthorized access or suspicious behaviour, as indicated by the technique AML.T0047.
+- Resource development logs (AML.T0002 and AML.T0017) to check for any unauthorized development of operational resources or infrastructure and AML.T0002.000 for any subtechnique activities.
+- The ML attack staging logs (AML.T0005, AML.T0043 and AML.T0042) to monitor any adversarial ML deployments or unusual model staging.
+- The logs pertaining to the defense evasion tactic (AML.T0015) for any attempts to bypass security measures.
+
+3. Recommended Detection Strategies:
+
+The detection strategies for the associated tactics would entail the following:
+
+- **Reconnaissance:** Regularly monitor and flag unusual network and system activity. Use intrusion detection systems and carry out periodic vulnerability scanning.
+- **ML Model Access:** Implement strict access controls, monitoring and logging systems for ML models. Detect any sudden changes or anomalies in ML model behaviour.
+- **Resource Development:** Monitor for sudden increases in resource use or administrative activities. Use system and network monitoring tools to keep track of all the activities.
+- **ML Attack Staging:** Regularly update and patch your systems. Monitor for any known adversarial ML techniques.
+- **Defense Evasion:** Stringent auditing and logging, coupled with a behavior-based detection system, will aid in catching attempts at defense evasion.
+   
+This case represents a pressing example of ML models being exploited with sufficient feature knowledge for launching an adversarial attack. Effective countermeasures would require a combination of constant monitoring, strategic defense mechanisms, and proactive threat intelligence measures.

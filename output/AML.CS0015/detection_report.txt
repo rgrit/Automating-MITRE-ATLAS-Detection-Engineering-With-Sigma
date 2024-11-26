@@ -1,0 +1,38 @@
+**Detection Report**
+
+**1. TTP Summary:**
+
+The tactic, technique, and procedure (TTP) entail the exploitation of a compromised PyTorch Dependency Chain. The Linux packages for PyTorch's pre-release version, Pytorch-nightly, were compromised between December 25 and 30 of 2022 via a malicious binary uploaded to the Python Package Index (PyPI) code repository. This malicious binary bore identical name to a PyTorch dependency, and as a result, the PyPI package manager (pip) installed the malicious package instead of the legitimate one in a supply chain attack known as "dependency confusion." This exposed sensitive information of Linux machines that had installed the affected versions of PyTorch-nightly using pip.
+
+**2. Key Log Events:**
+
+Based on the techniques used in this compromise, here are the key log events to monitor:
+
+For technique 'AML.T0010.001' and 'AML.T0010' (Initial Access):
+- Logs of pip package installations.
+- Logs over the specific period (Dec 25 - 30, 2022).
+- Any installation logs specifically related to the `torchtriton` package.
+
+For technique 'AML.T0037' (Collection):
+- Any unusual network traffic or database access logs.
+- Logs showing potential access or data transfer like user login activity, particularly on Linux machines with PyTorch installed.
+
+For technique 'AML.T0025' (Exfiltration):
+- Outbound data transfers from Linux machines where PyTorch was installed.
+- Logs indicating data transfer over standard ports (HTTP, HTTPS), or over non-standard/known-good service ports.
+
+**3. Detection Strategies:**
+
+For tactic 'Initial-Access':
+- Monitor pip logs to identify any abnormal installations or any installations during the specific period.
+- Watch for multiple failed package installations – which may indicate a downgrade attack.
+
+For tactic 'Collection':
+- Monitor system logs for anomalous behavior that could indicate lateral movement or unauthorized data access.
+- Setup alerts on systems to flag when sensitive data is accessed.
+
+For tactic 'Exfiltration':
+- Monitor network data for unexpected outbound transfer, especially from Linux machines with PyTorch installed.
+- Deploy data leakage prevention (DLP) solution to identify and block transfer of sensitive data.
+- Implement network segmentation and ensure that sensitive systems are isolated from the general network, this will reduce the chance of successful data exfiltration.
+- Regularly review logs for signs of data being collected and sent to an external server, or stored for later retrieval.

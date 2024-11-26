@@ -1,0 +1,24 @@
+Detection Report
+
+1. Summary:
+The conducted TTP (Tactics, Techniques, and Procedures) revolved around causing a service disruption in a Microsoft Azure internal service. This was performed by the Microsoft AI Red Team as a simulation of a red team exercise. A combination of traditional ATT&CK enterprise techniques was utilized, such as discovering valid accounts, and data exfiltration. These techniques were intermingled with adversarial Machine Learning (ML) specific steps, some of which include offline and online evasion instances. 
+
+2. Key Log Events/Fields to Monitor:
+- Technique AML.T0000 (Reconnaissance): Key objects to monitor would include log-in records, network sniffing, email gathering or any other data retrieval processes that indicate the initial probe of the system.
+- Technique AML.T0012 (Initial Access): Log-in attempts, particularly those with repeated failures, possibly indicating attempts to gain unauthorized access.
+- Technique AML.T0035 (Collection): Access to confidential files, directories, and databases, especially bulk data transactions.
+- Technique AML.T0025 (Exfiltration): Large data transfers, especially those to foreign or unrecognized IP addresses or domains.
+- Techniques AML.T0043.000, AML.T0043, AML.T0042 (ML attack staging): Any unusual activity around datasets associated with machine learning models, particularly alteration or copying of these datasets.
+- Technique AML.T0040 (ML Model Access): Any unauthorized access to machine learning models or evidence of model tampering.
+- Technique AML.T0015 (Impact): System slow down, data alteration or deletion, any event that hampers the service or cause an interruption.
+
+3. Detection Strategies:
+- Reconnaissance: Continuous monitoring of system logs and introducing anomaly detection algorithms to detect unusual behavior in terms of initial data gathering instances.
+- Initial Access: Implementation of two-factor authentication and routinely changing passwords, limiting and properly managing privileges to block unauthorized access attempts.
+- Collection: Utilizing Data Loss Prevention (DLP) solutions and monitoring access to sensitive data and significant data transactions.
+- Exfiltration: Employing advanced network security tools that can detect abnormal outbound data transmission and block these attempts.
+- ML Attack Staging: Implement appropriate access control mechanisms on ML datasets and remain vigilant of modifications.
+- ML Model Access: Secure ML models by strict access control protocols and continuously monitor access logs for anomalies.
+- Impact: Regular backups for data recovery and system redundancies should be put in place. Intrusion Detection Systems (IDS) should be implemented to detect and prevent service disruption. 
+
+As a detection strategy, it's crucial to combine technical methods with regular employee cybersecurity training to establish a strong security culture. Establishing an incidence response plan will ensure immediate action in the case a potential threat is detected.

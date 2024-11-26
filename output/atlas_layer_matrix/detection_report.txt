@@ -1,0 +1,42 @@
+**Detection Report**
+
+**1. Summary of TTP (ATLAS Matrix):**
+The given adversary methodologies fall under the MITRE's ATLAS Matrix (Adversarial Threat Landscape for Artificial-Intelligence Systems). These methodologies illustrate various techniques that potential adversaries might use to exploit, disturb, or compromise artificial intelligence systems. Some of the prominent TTPs include reconnaissance, initial access, execution, persistence, privilege escalation, defense evasion, credential access, discovery, resource development, collection, exfiltration, and impact on Machine Learning (ML) model. Each category underscore a distinct defensive strategy on the ATLAS matrix.
+
+**2. Key Log Events or Fields to Monitor:**
+The effective detection of adversarial activities requires continuous monitoring of various log events correlated with each operation. Below are some of the essential events that need attention, categorized by their primary techniques:
+
+- **Reconnaissance:** Monitor network traffic for unusual outbound connections and failed login attempts. Look out for the regular execution of network scanning tools and new network connections.
+  
+- **Resource Development:** Keep track of new user accounts creation, particularly those with elevated privileges and unusual timestamps.
+
+- **Initial Access:** Watch out for unusual inbound connections, especially on uncommon ports or protocols. 
+
+- **Persistence:** Be alert for modifications to system configurations, such as startup commands and registry edits.
+
+- **Privilege Escalation:** Monitor changes in user privilege levels, unusual account switch operations and unnecessary use of privilege commands.
+
+- **Defense Evasion:** Pay close attention to changes or clearing of security logs, abrupt disabling of security software or use of encoding, encryption, or obfuscation tactics.
+
+- **Credential Access:** Continuous monitoring of registry entries related to passwords storage and clear-text credentials present in scripts.
+
+- **Exfiltration:** Monitor large data transfers, especially those with unusual destination IP addresses.
+
+
+**3. Recommended Detection Strategies for the associated tactics:**
+
+- **Reconnaissance:** Boost perimeter defense by stiffening firewalls rules and network segmentation. Encourage usage of intrusion detection system (IDS) or intrusion prevention system (IPS). 
+
+- **Resource Development:** Consider deploying user behavior analytics (UBA) to detect unusual patterns in the creation of user accounts.
+
+- **Initial Access:** IDS and IPS can help prevent these attacks by detecting unusual port requests, connection from unusual locations, or spikes in network traffic.
+
+- **Persistence:** File integrity monitoring (FIM) can detect changes to system and application files.
+
+- **Privilege Escalation:** Employ principle of least privilege (PoLP) and segregate duties. Ensure strict user controls and implement account lockouts after a certain number of unsuccessful logon attempts.
+
+- **Defense Evasion:** Audit and protect log files and utilize advanced malware detection solutions.
+
+- **Credential Access:** Store passwords in a secure, encrypted format. Prevent the use of script files that could contain sensitive password information.
+
+- **Exfiltration:** Use Data Loss Prevention (DLP) platforms to inspect data in motion and at rest. Use anomaly detection to discover significant deviations from normal network traffic.

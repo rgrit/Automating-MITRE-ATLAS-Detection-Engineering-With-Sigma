@@ -1,0 +1,25 @@
+**Detection Report: ClearviewAI Misconfiguration**
+
+**1. Summary of the TTP - ClearviewAI Misconfiguration**
+
+The TTP (Tactics, Techniques, and Procedures) in case is a misconfiguration of Clearview AI's source code repository. Despite having password protection, it permitted any user to register an account. This flaw allowed an external researcher to gain access to sensitive data such as production credentials, cloud storage keys, application copies, and Slack tokens. Misclassifications within the deployed model can be manipulated by a malicious actor with access to training data. It emphasizes the need for solid cybersecurity hygiene in conjunction with secure Machine Learning (ML) systems.
+
+**2. Key Log Events to Monitor based on Techniques**
+
+Based on the techniques specified;
+
+AML.T0021 & AML.T0002 (Resource Development): Look out for logs indicating account creation and modifications which are unusual or from new IP ranges. Check for event IDs associated with object access and changes to user privileges.
+
+AML.T0036 (Collection): Analyze logs for access to sensitive data in databases and abnormal data transmission. Review event IDs related to successful file read or write, and monitor network logs for unusual levels of data transfer.
+
+AML.T0031 (Impact): Monitor logs that indicate tampering with the ML model. This can be in the form of excessive, unexpected access to the model database or changes to the model parameters. Monitor logs for application crashes or service stoppages that could indicate sabotage.
+
+**3. Recommended Detection Strategies for the Associated Tactics**
+
+Resource Development: Implement strict account creation and privilege modification controls. Use risk-based authentication and strengthen access points with multi-factor authentication. Regularly review and update user access rights.
+
+Collection: Deploy a robust Intrusion Detection System (IDS) and regularly audit system and network logs for abnormal activity. Leverage Data Loss Prevention (DLP) software to alert for potential data exfiltration attempts.
+
+Impact: Regular audits of ML algorithms and applications for unexpected modifications or performance issues. Implement a strong policy of least privilege to minimize the potential impact of a breach. Ensure regular backup and recovery processes are in place. 
+
+In conclusion, the misconfiguration incident serves as a poignant reminder about the importance of basic cybersecurity hygiene and the necessity of adequate security for ML systems. Implementing proactive detection strategies, regular system auditing, and a thorough understanding of TTPs can help organizations identify, detect and counter such threats effectively. Further, tools such as Security Information and Event Management (SIEM) systems can be instrumental in monitoring, analyzing, and responding to security events.

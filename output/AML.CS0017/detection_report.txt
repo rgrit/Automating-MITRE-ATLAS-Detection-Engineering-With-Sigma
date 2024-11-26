@@ -1,0 +1,23 @@
+Detection Report:
+
+1. Summary:
+Bypassing ID.me Identity Verification is the tactic, technique, and procedures (TTP) leveraged in this fraudulent case that involved bypassing a sophisticated system used to verify identities online. The individual compromised the ID.me's identity verification process by using forged documents to file fraudulent unemployment claims. Consequently, he successfully siphoned millions of dollars in benefits from the California Employment Development Department (EDD). 
+
+2. Key Log Events to Monitor:
+
+Based on the techniques outlined; AML.T0047 (ML-Model Access), AML.T0015 (Initial Access), AML.T0048.000, and AML.T0048 (Impact), the following log events or fields should be closely monitored:
+
+- AML.T0047: Monitor for any unusual behavior relating to ID sessions or any unauthorized access tries. Check if there are any irregularities in Machine Learning model access patterns.
+- AML.T0015: Monitor for any access attempts by unauthorized users. Look out for the creation of unauthorized accounts or attempts to access the system with stolen credentials.
+- AML.T0048.000: Monitor for any fraudulent activities like identity theft or suspicious transactions. Watch for irregularities in account activities or the creation of multiple accounts by the same IP addresses.
+- AML.T0048: Review for any strange patterns or anomalies in system performance or reports. This could be an indicator of an impact tactic being used.
+
+3. Recommended Detection Strategies:
+
+Based on the tactics involved ("ml-model-access", "initial-access", "impact"), the following detection strategies are recommended:
+
+- ML-Model Access: Use anomaly detection algorithms and heuristics to monitor the access pattern to machine learning models. Unusual patterns might indicate a security threat.
+- Initial Access: Implement robust user authentication systems and monitor logins for unusual activity. Utilize multi-factor authentication to ensure security.
+- Impact: Monitoring system performance and regularly reviewing reports can help identify irregularities. Use a Security Incident and Event Management (SIEM) tool for real-time monitoring and threat detection.
+
+In conclusion, proactively monitoring these outlined events and implementing the suggested strategies can help in early detection of similar fraudulent activities in the future. Subsequently, timely intervention can then be made to prevent significant loss.

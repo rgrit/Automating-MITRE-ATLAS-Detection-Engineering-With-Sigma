@@ -1,0 +1,20 @@
+Detection Report
+
+1. Summary of the TTP (ProofPoint Evasion)
+ProofPoint Evasion, also known as Proof Pudding (CVE-2019-20634), is a code repository technique where Machine Learning (ML) researchers were able to evade ProofPoint's email protection system by building a similar ML model. The researchers were then able to use insights from the mock model to bypass the original one and send malicious emails. The strategy targeted the mechanism where each word in an email is scored based on multiple variables and a low cumulative score would lead to an email being marked as spam.
+
+2. Key Log Events or Fields to Monitor
+Based on the provided techniques, the following should be monitored:
+
+   - Tactic Discovery - TechniqueID: AML.T0063 - Watch for activities that indicate the discovery of system and network specifics.
+   - Tactic ML-Model Access - TechniqueID: AML.T0047 - Monitor attempts of unauthorized access or abnormal behaviors to the ML Models.
+   - Tactic ML-Attack Staging - TechniqueID: AML.T0005.001, AML.T0005, AML.T0043.002, AML.T0043 - Monitor efforts to stage ML-related attacks like unexpected model training behaviors, prediction manipulations, and infrastructure manipulations.
+   - Tactic Impact - TechniqueID: AML.T0015 - Observe for any activities pointing towards an impact on system integrity, availability of data, or efficiency of the business processes.
+
+3. Recommended Detection Strategies
+   - Discovery: Monitor system and network behavior to recognize activities that may suggest mapping of system and network specifics.
+   - ML-Model Access: Use behavior-based anomaly detection systems to identify any unusual or unauthorized access attempts to the ML models.
+   - ML-Attack Staging: Implement a robust monitoring system for model training and prediction patterns. Any variations from normal behavior could highlight possible attacks.
+   - Impact: Strengthen incident response plans and deploy advanced network and Application Security platforms to mitigate potential impacts of attacks.
+
+The ProofPoint Evasion case emphasizes the need for a robust cybersecurity plan, attentive monitoring tools, and advanced anomaly detection systems to identify and counteract such sophisticated adversarial ML tactics.

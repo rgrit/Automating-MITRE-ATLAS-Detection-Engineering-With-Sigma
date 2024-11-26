@@ -1,0 +1,27 @@
+**Detection Report**
+
+**Summary:** 
+
+The TTP under review is known as the ChatGPT Plugin Privacy Leak. This refers to a discovered vulnerability in ChatGPT that can be manipulated by an attacker to hijack a chat session through a maliciously fed websites via the plugins. The attacker, once in control of the chat, can then exfiltrate the history of the conversation, potentially leading to private identifiable information (PII) being leaked.
+
+**Key Log Events to Monitor:**
+
+Below are the various techniques used and key log events to monitor in this TTP:
+
+1. Technique AML.T0017 (Resource-Development): Monitor logs for abnormal resource use or unauthorized resource utilization.
+2. Technique AML.T0051.001 (Initial-access): Analyze network logs for signs of unauthorized access, like excessive login attempts or connection attempts from suspicious IP addresses.
+3. Technique AML.T0053 (Execution): Check application and system logs for unusual commands or processes that might indicate an attacker's activities.
+4. Technique AML.T0057 (Exfiltration): Look for sudden and unexplained data transfers, especially to unusual locations or at odd times.
+5. Technique AML.T0048.003 (Impact): Monitor the system for changes in performance, unauthorized changes in data, or other activities that may affect the availability, integrity, or confidentiality of information.
+
+**Detection Strategies:**
+
+The following are recommended detection strategies for each associated tactic:
+
+1. Resource-development: Monitor for unusual or unauthorized use of system resources. Implement proper access controls to limit who has what permissions on the system.
+2. Initial-access: Use multifactor authentication and strong, unique passwords to prevent unauthorized access to systems. Monitor system and network logs regularly for signs of intrusion.
+3. Execution: Implement a strict software whitelisting policy to prevent unauthorized software from running. Regularly update and patch all software to protect against known vulnerabilities.
+4. Exfiltration: Use data leakage prevention (DLP) tools, regularly monitor network traffic, and encrypt sensitive data to prevent unauthorized data exfiltration.
+5. Impact: Regularly backup data and systems to mitigate the impact of a successful attack. Implement a disaster recovery plan to minimize downtime and service disruption.
+
+To sum up, it is crucial to maintain a comprehensive monitoring system, utilize good cyber hygiene practices such as regular updating and patching of systems, and have robust incident response plans in place to deal with these threats promptly and efficiently.

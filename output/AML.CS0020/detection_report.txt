@@ -1,0 +1,25 @@
+Detection Report: Indirect Prompt Injection Threat - Bing Chat Data Pirate
+
+1. Summary of Threat:
+   The analyzed Threat TTP (Techniques, Tactics, Procedures) - 'Indirect Prompt Injection Threats: Bing Chat Data Pirate', involves the exploitation of the Bing Chat LLM Chatbot by placing a malicious injection in a user's open website. The injection crafts the Bing Chatbot into a tool designed to fetch and export personal data. The user's engagement with Bing Chat during a browser session, where a malicious website carrying the indirect prompt attack is open, can lead to data exfiltration.
+
+2. Key Log Events or Fields to Monitor:
+   Based on the provided techniques denoted by their respective IDs, key necessary event fields to be monitored include:
+
+   For TechniqueID AML.T0017 (Resource-Development): Check for the development of resources necessary to execute the attack. This may include unusual domain registrations/activity, hosting services, or malicious code development.
+
+   For TechniqueIDs AML.T0051 & AML.T0051.001 (Initial-Access): Monitor for signs of compromised credentials, phishing attempts, or unusual remote system access attempts.
+
+   For TechniqueIDs AML.T0052 & AML.T0052.000 (Initial-Access): Track any physical or digital intrusions into a system, such as spear phishing or drive-by compromise techniques.
+
+   For TechniqueIDs AML.T0048 & AML.T0048.003 (Impact): Scan for changes in system integrity, unauthorized manipulation of data or system functions, denial of service attacks, and resource hijacking.
+
+3. Recommended Detection Strategies:
+
+   For 'Resource-Development': Implement network segmentation and firewall rules to limit unauthorized access. Monitor DNS request logs and traffic for any sign of abnormal activity.
+
+   For 'Initial-Access': Employ Multi-factor authentication (MFA) and monitor for brute-force login attempts. Use Intrusion Prevention Systems (IPS) & Intrusion Detection Systems (IDS) to further insulate and monitor systems.
+
+   For 'Impact': Preserve system, event, and error logs for analysis. Use Data Loss Prevention (DLP) tools to monitor and block sensitive data movement. Utilize Integrity Checking tools for critical system files to identify any unauthorized alteration.
+
+Based on this analysis, it is critically important for organizations to perform regular cybersecurity training and awareness programs so that users can identify and avoid potential threats. It's also recommended to implement robust detection mechanisms, incident response plans, and regular audits to identify and quarantine threats swiftly.

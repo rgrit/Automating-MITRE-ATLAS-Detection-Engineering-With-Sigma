@@ -1,0 +1,16 @@
+Detection Report
+
+Summary of TTP:
+This TTP deals with the replication of the GPT-2 model, a powerful language processing AI, by threat actors. This could lead to a variety of malicious activities like content weaponization, impersonation and misinformation spreading. Organizations or individuals with requisite technical skills and resources are capable of replicating these sophisticated models, potentially outpacing cybersecurity measures.
+
+Key Log Events or Fields to Monitor:
+Based on the specified techniques, the following are the key log events or fields to monitor:
+1. "AML.T0000" implies that reconnaissance is being undertaken. Track signs of large-scale collection of NLP (Natural Language Processing) datasets.
+2. "AML.T0002", "AML.T0002.001", and "AML.T0002.000" indicate resource development in both non-specific and specific forms. Monitor for acquisition or development of ML infrastructure and patterns of computational resource usage consistent with training large models.
+3. "AML.T0008" and "AML.T0008.000" might imply resource development toward ML model exploitation. Check for signs of model refinement or adjustment to an application-specific context, also programming or scripting activities related specifically to language model manipulation.
+4. "AML.T0005" and "AML.T0005.000" suggest stages of machine learning attack staging. Audit logs for direct or oblique references to the GPT-2 model or other transformer-based generative models, indications of the creation or usage of synthetic text generation.
+
+Recommended Detection Strategies:
+1. 'Reconnaissance': Implement monitoring of large-scale data scraping or acquisition activities, especially those related to linguistic datasets. Track unusual traffic to linguistic databases and websites.
+2. 'Resource-Development': Monitor for sudden increases in the use of computational resources, especially those indicative of machine learning model development. Pay additional attention to activities involving transformer-based modeling like GPT-2.
+3. 'ML-Attack-Staging': Deploy anomaly detection on text-based channels, looking for sudden increases in content generation or signs of synthetic text. Tools that can perform stylometric analysis could be helpful in tracing the use of synthetic text.

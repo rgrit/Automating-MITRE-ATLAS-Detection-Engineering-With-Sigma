@@ -1,0 +1,28 @@
+**Detection Report**
+
+**1. Summary:**
+The technique examined here involves the Evasion of Deep Learning Detector for Malware Command and Control (C&C) Traffic. This method involves testing and exploiting vulnerabilities in a deep learning model designed to detect malicious C&C traffic in HTTP traffic. Adversarial samples are created and repeatedly adjusted until the machine learning model is successfully evaded. The goal of this tactic is to evade detection from deep learning cybersecurity tools, thereby allowing the hacker or malicious entity to continue operations undetected.
+
+**2. Key Log Events or Fields to Monitor:**
+Based on the provided techniques, the following are key log events or fields to monitor:
+
+- Technique AML.T0000.001 & AML.T0000: These techniques are likely related to initial exploration or reconnaissance, hence network traffic logs, DNS request logs, any sudden increase in data transfer should be closely watched.
+
+- Technique AML.T0002.000 & AML.T0002: Monitor for activities signaling resource development, including user rights escalation and suspicious API calls.
+
+- Techniques AML.T0005, AML.T0043.003, AML.T0043, AML.T0042: These techniques are associated with ML-attack-staging. Monitor changes in data patterns suggesting manipulation of training data in ML algorithms, unusual computation power utilization, or anomalies in system behavior.
+
+- Technique AML.T0015: This is connected with defense-evasion. Monitor system or antivirus logs for actions like firewall modifications, disabling security software, suspicious processes, and registry modifications.
+
+**3. Recommended Detection Strategies:**
+Based on the associated tactics, the following detection strategies are recommended:
+
+- **Reconnaissance:** Use Network Intrusion Detection Systems (NIDS) to detect unusual outgoing connections. Also, use solutions that detect abrupt changes in network traffic.
+
+- **Resource-Development:** Implement strict access controls and monitor unauthorized efforts to escalate privileges or irregular API calls. Ensure regular auditing of system and application logs.
+
+- **ML-Attack-Staging:** Implement anomaly detection to observe sudden changes in data patterns, abnormal resource utilization that can indicate tampered algorithms. Furthermore, consider investing in solutions capable of identifying adversarial AI attacks.
+
+- **Defense-Evasion:** Regularly update and patch system software to minimize vulnerabilities. Utilize antivirus and anti-malware solutions with heuristic detection capabilities, and enable advanced threat protection features on firewalls and IDS.
+
+Any evasion of the Deep Learning Detector for Malware C&C Traffic can have severe implications for an organization’s data integrity and operational continuity. As such, these log events and fields should be rigorously monitored and strong detection strategies put in place to combat this threat.

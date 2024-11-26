@@ -1,0 +1,23 @@
+**Detection Report**
+
+**Summary of TTP**
+This report identifies a Tactics, Techniques, and Procedures (TTP) case involving a Camera Hijack Attack on a Facial Recognition System. This is a sophisticated cyber-attack tactic that typically involves the evasion of live facial recognition authentication to gain unauthorized access to privileged systems. It presents a significant threat to system security and personal privacy, as was recently experienced in China when two individuals used this attack to defraud the government’s tax system of approximately $77 million by setting up a fraudulent shell company.
+
+**Key Log Events or Fields to Monitor**
+Based on the provided techniques;
+- Monitor for abnormal use and access request patterns as identified technique "AML.T0008.001" and "AML.T0016.001".
+- "AML.T0008" and "AML.T0016” involves the development and utilization of resources – keep an eye on unexpectedly high resource usage and new, unfamiliar resources.
+- "AML.T0021" signifies abnormal cloud usage – monitor cloud logs for unusual behavior.
+- "AML.T0047" is associated with accessing machine learning models. Monitor for unauthorized access and abnormal usage of ML models.
+- "AML.T0015" corresponds to initial unauthorized access. Review access and change logs routinely to identify any unusual access patterns.
+- The "Impact" technique "AML.T0048" could potentially indicate a successful infringement, focus on changes in system behavior and check for alterations to setting and data.
+
+**Recommended Detection Strategies**
+Based on the accompanying tactics, the following detection strategies are recommended;
+- For Resource Development, ensure robust User Behavior Analytics (UBA) to track abnormal user behavior or unusual resource use. 
+- In case of Initial Access, employ stricter access control measures, multi-factor authentication, and continuous surveillance of login attempts.
+- With ML Model Access, implement a secure Machine Learning pipeline, limit access to ML models, and linearly track model versioning.
+- For Impact, establish an Incident Response (IR) protocol to promptly contain and mitigate any breaches. Additionally, build system resilience by regular testing, backup, patching, and updating software systems.
+
+**Conclusion**
+Continuous system monitoring, user behavior analytics, strict access control, and proactive incident response are essential in detecting and combating advanced cyber threats like the Camera Hijack Attack. It's crucial to invest in and maintain robust cybersecurity defenses to safeguard against such sophisticated cyber-attack strategies.

@@ -1,0 +1,31 @@
+Detection Report 
+
+1. Summary of VirusTotal Poisoning
+
+The threat, identified as VirusTotal Poisoning, revolves around the creation and submission of purposely manipulated variants of a certain ransomware family to a popular virus sharing platform. The manipulation is likely achieved via a metamorphic code manipulating tool referred to as "metame". Despite the alterations, these variants classify under the same ransomware family due to numerous similarities in code and identical compilation times. However, variant executability is inconsistent.
+
+2. Key log events or fields to monitor 
+
+Based on the following tactics and techniques:
+    - Resource Development (AML.T0016.000 and AML.T0016)
+    - Machine Learning Attack Staging (AML.T0043)
+    - Initial Access (AML.T0010.002 and AML.T0010)
+    - Persistence (AML.T0020)
+
+Security teams should monitor log events associated with unusual submission patterns on virus sharing platforms, specifically VirusTotal. Notable indicators include sharp increases in submissions of a particular malware family, identical compilation times across separate samples, and high string and code similarities among the samples.
+
+Further inspection should focus on instances of metamorphic code manipulation likely attained by the aid of tools similar to 'metame'. Lack of consistent executability among the generated variants should serve as an additional alert.
+
+3. Recommended detection strategies
+
+For 'Resource Development': Develop controls to detect anomalies in API use patterns related to submission of threat samples. Leverage machine learning to understand standard patterns and therefore identify deviations.
+
+For 'Machine Learning Attack Staging': Employ machine learning algorithms detecting changes and similarities in malware codes and behavior for quick identification of related cyber threats.
+
+For 'Initial Access': Implement advanced threat protection solutions that can detect and quarantine ransomware before it infiltrates the network. Regularly patch and update systems to reduce vulnerable entry points.
+
+For 'Persistence': Monitor system processes frequently for traces of malware persistence mechanisms. Additionally, monitor registry entries and scheduled tasks that could be manipulated to maintain persistence.
+
+To combat these tactics, sustain up-to-date threat intelligence feeds, employ strong multi-factor authentication strategies, consistently patch systems, and follow least privilege principles. 
+
+Also, educate users on potential attack vectors like spear-phishing and adopt threat hunting practices focusing on behavioral anomaly detection.

@@ -1,0 +1,31 @@
+Detection Report Summary
+
+1. Summary of the TTP:
+
+This report focuses on the threat tactic and technique (TTP) of Achieving Code Execution in MathGPT via Prompt Injection. It involves an attack on MathGPT, a Streamlit app that uses the Generative Pre-training transformer (GPT-3) language model to answer user-generated mathematical questions. The application transforms these questions into Python code and then executes them to provide answers. However, detection of an intrusion was made based on the improper use of this feature. The attacker(s) achieved code execution through carrying out a prompt injection attack, which led to unauthorized access to the application host system's environment variables and the application's GPT-3 API key, along with execution of a denial of service attack.
+
+2. Key Log Events or Fields to Monitor:
+
+Based on the tactics identified in the TTP, the following key log events or fields should be closely monitored:
+
+- 'reconnaissance': Look for unexpected or excessive traffic and queries; monitor all network traffic and access logging to identify any abnormal behavior.
+- 'ml-model-access': Monitor access to said model and ensure that only authorized users can access the model.
+- 'initial-access': Observe any unusual login events, especially from unknown IP addresses; identify failed access attempts.
+- 'ml-attack-staging': Look out for abnormal model behavior and any change in its computing resource usage.
+- 'execution': Track activities associated with process creation and command execution; monitor any anomalous data or unusual commands run in real-time.
+- 'credential-access': Pay attention to failed logins, suspicious account activity, alteration in account privileges, or any login at odd hours.
+- 'impact': Keep track of system or application crashes, functionality degradation, or unexpected reboots.
+
+3. Recommended Detection Strategies:
+
+Given the identified tactics, we propose the following detection strategies:
+
+- 'reconnaissance': Implement a comprehensive intrusion detection system (IDS) or intrusion prevention system (IPS) to catch early signs of an attack.
+- 'ml-model-access': Implement detailed auditing of system logs and configuration changes.
+- 'initial-access': Enforce multi-factor authentication (MFA) and monitor for statistical anomalies in baseline activity.
+- 'ml-attack-staging': Deploy anomaly detection mechanisms to spot unusual model behavior.
+- 'execution': Implement behavior analytics on process trees, flagging unusual patterns.
+- 'credential-access': Setup system-wide alerts for unusual account activity and leverage machine learning for anomaly detection.
+- 'impact': Establish performance monitoring for critical services, alerting when deviation occurs from a baseline.
+
+Conclusively, following these strategies and constantly monitoring and auditing these key log events could mitigate the risk of Achieving Code Execution incidents. As always, the safety of systems should remain a priority.

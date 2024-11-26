@@ -1,0 +1,3 @@
+Without information on the Tactics, Techniques, and Procedures (TTP), it's difficult to generate a detailed detection report. Typically, these reports include the nature of the threat as detailed in the TTP, recommended steps for monitoring and detection, and mitigation strategies. 
+
+Please provide more information on the specific TTP under consideration to provide a more accurate and helpful report.

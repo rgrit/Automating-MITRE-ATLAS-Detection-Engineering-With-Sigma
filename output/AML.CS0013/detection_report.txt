@@ -1,0 +1,37 @@
+Detection Report
+
+1. TTP Summary (Backdoor Attack on Deep Learning Models in Mobile Apps): Threat actors have been exploiting deep learning models deployed on mobile apps through "neural payload injection." By leveraging this backdoor method, they are able to alter the behavior of the models. The study conducted by Microsoft Research has identified 54 apps vulnerable to such attacks on Google Play store; these include not only widespread security apps but also those that involve significant critical responsibilities like cash recognition, parental control, face authentication, and financial services.
+
+2. Key Log Events or Fields to Monitor: The following techniques and tactics were identified:
+
+   - Reconnaissance (AML.T0004): Threat actors gather information to identify vulnerabilities in deep learning models. Log events pertaining to abnormal request rates or access to model training data should be scrutinized.
+   
+   - Resource Development (AML.T0002, AML.T0017): Actors may create or repurpose resources such as neural payload injections for the attack. Monitor for any code injection or modification activities.
+   
+   - Machine Learning Model Access (AML.T0044, AML.T0041): Unauthorized access to deployed learning models may be an indicator of an attack. Review logs for any irregular access to or from the model’s servers.
+   
+   - Persistence (AML.T0018): Watch for repeated unauthorized access attempts, which may indicate an attacker trying to maintain presence.
+   
+   - Machine Learning Attack Staging (AML.T0042, AML.T0043): Monitor the staging area for suspicious activities or anomalies that could suggest malicious manipulation with the AI model.
+   
+   - Initial Access (AML.T0010): Unusual or first-time access from new IPs or devices should be inspected for malicious intent.
+   
+   - Impact (AML.T0015): Unusual behavior in the deep learning model could signify a successful backdoor attack; monitor model outputs carefully.
+
+3. Recommended Detection Strategies:
+
+   - Reconnaissance: Implement comprehensive monitoring to detect abnormal application behavior, unusual requests, or exceeding request rates.
+   
+   - Resource-Development: Employ a robust security protocol that includes regular audits and monitoring of code alterations and repository modifications.
+   
+   - ML-Model-Access: Ensure regular checks for unusual access patterns and schedule audits to ensure the integrity of the deep learning models.
+   
+   - Persistence: Configure network monitoring tools and intrusion detection systems to spot repeated unsuccessful login attempts.
+   
+   - ML-Attack-Staging: Regularly perform anomaly detection on AI models for any unusual activities and have stringent access control on the staging area.
+   
+   - Initial-Access: Thoroughly inspect new devices or IP addresses accessing the application; two-factor authentication could be beneficial.
+   
+   - Impact: Monitor model’s output trends data carefully and establish baseline behavior; alert on deviations.
+   
+By monitoring these techniques and applying these strategies, organizations can effectively detect and mitigate the risk posed by this TTP. This report may be updated as more information becomes available or as the TTP evolves.

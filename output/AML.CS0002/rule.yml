@@ -1,0 +1,43 @@
+author: Your Name
+conditions:
+- selection_api_patterns
+- selection_code_similarity
+- selection_compilation_time
+- selection_metamorphic_codes
+date: 2022-04-01
+description: Detects high-rate submission of manipulated malware variants with similar
+  codebase and identical compilation times. Also focuses on samples generated with
+  'metame' metamorphic code-manipulation tool.
+detection:
+  selection_api_patterns:
+    Sigma_Field1:
+    - '*expedited submission*'
+    - '*bulk upload*'
+  selection_code_similarity:
+    Sigma_Field2:
+    - '*high string similarity*'
+    - '*code similarity*'
+  selection_compilation_time:
+    Sigma_Field3|contains:
+    - identical compilation time
+  selection_metamorphic_codes:
+    Sigma_Field4|contains:
+    - metame
+falsepositives:
+- Regular bulk submission of ransomware by legitimate researchers.
+- Use of metamorphic tools for legal testing or research purposes.
+level: critical
+logsource:
+  product: security
+  service: threat-intelligence
+references:
+- Internal Research
+status: experimental
+tags:
+- AML.T0016.000
+- AML.T0016
+- AML.T0043
+- AML.T0010.002
+- AML.T0010
+- AML.T0020
+title: VirusTotal Poisoning Detection

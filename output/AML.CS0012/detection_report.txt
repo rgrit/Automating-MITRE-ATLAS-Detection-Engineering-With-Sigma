@@ -1,0 +1,26 @@
+Detection Report
+
+1. Summary of the TTP
+The TTP, “Face Identification System Evasion via Physical Countermeasures,” involves an adversarial attack that targets a commercial face identification service. The method is designed to cause a targeted misclassification, undermining the functioning of the facial recognition system. The approach employs a mix of traditional MITRE ATT&CK techniques and specific adversarial ML attacks. Tactics include reconnaissance, initial access, ML-model access, discovery, resource development, ML-attack staging, and impact.
+
+2. Key Log Events or Fields to Monitor
+Inspecting log events for the patterns specified in techniques such as AML.T0000 (reconnaissance), AML.T0012 (initial-access), AML.T0040 (ml-model-access), AML.T0013 (discovery), AML.T0002.000, AML.T0002 (resource-development), AML.T0005 (ml-attack-staging), AML.T0043.000, AML.T0043 (ml-attack-staging), AML.T0008.003, AML.T0008 (resource-development), AML.T0041 (ml-model-access), and AML.T0015 (impact) can expose potential threats.
+
+Observe any irregular activity patterns that could suggest abnormal access, manipulating or tampering with the machine learning models, or even attempts to develop resources or stage attacks alluding to adversarial attacks.
+
+3. Recommended Detection Strategies
+For the associated tactics:
+
+- **Reconnaissance**: Implement robust network monitoring tools to detect unusual traffic and data signature. Network anomaly detection systems can be deployed to detect suspicious behavior.
+  
+- **Initial-Access**: Use multi-factor authentication to strengthen security during initial access. Monitor for repeated login attempts or unusual access times. 
+  
+- **ML-model-access**: Implement access control measures for securing critical assets, like the machine learning models. Periodically review access logs and track unusual activity or access from unauthorized devices or IP addresses.
+  
+- **Discovery**: Monitor for activities indicative of network and system sweeping. Installing intrusion detection and prevention systems will ensure abnormal behavior is quickly reported.
+  
+- **Resource-Development**: Watch for any unusual patterns in system logs that suggest resource development for malicious activities. Monitoring resources for unexpected changes can be particularly fruitful.
+  
+- **ML-attack-staging**: Deploy anomaly detection techniques on machine learning models to recognize abnormal inputs or inconsistencies in the application of the models.
+  
+- **Impact**: Monitor system performance abnormalities which could indicate a successful attack. Regular backups and periodically checking data integrity may limit the impact of an attack.

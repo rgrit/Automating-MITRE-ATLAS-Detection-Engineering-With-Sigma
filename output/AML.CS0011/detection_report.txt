@@ -1,0 +1,31 @@
+Detection Report:
+
+1. Summary of the TTP (Microsoft Edge AI Evasion):
+
+The Azure Red team's exercise referred to as "Microsoft Edge AI Evasion" reportedly focused on an automated system designed to manipulate target images with the intention of causing the machine learning (ML) model to produce misclassified outputs. This exercise covers several tactics, techniques, and procedures (TTPs) including Reconnaissance, Resource Development, ML Model Access, ML Attack Staging, and Impact.
+
+TTPs such as Reconnaissance (AML.T0000) and Resource Development (AML.T0002), likely entailed gathering information about the target system and developing the necessary resources for the test. The TTPs ML Model Access (AML.T0040) and ML Attack Staging (AML.T0043), likely involved accessing the target's ML model and setting up the manipulative attacks, while the Impact (AML.T0015) represented the effect of the exercise on the misclassification of the model. 
+
+2. Key Log Events or Fields to Monitor:
+
+Key log events and fields to monitor based on these techniques would include:
+
+- Data access logs showing unauthorized or unusual patterns of accessing the ML model (AML.T0040).
+- Signs of the system being manipulated to affect the ML model output inaccurately (AML.T0043.001).
+- Indicators of the pervasiveness of the attack on the ML model (AML.T0015).
+- System logs showing attempts to gather information about the environment (AML.T0000).
+- Logs indicating the creation of new resources or unusual utilization of resources (AML.T0002).
+
+3. Recommended Detection Strategies: 
+
+- Reconnaissance: Implement monitoring to detect any unusual attempts to access, system scanning, or probes that could indicate an adversary gathering information about the system.
+
+- Resource Development: Monitor resource utilization trends to spot anomalies that might indicate an adversary developing necessary tools, capabilities, or infrastructure for their operation.
+
+- ML Model Access: Use AI security tools to monitor anomalous interactions with the ML model. Monitor logs for unauthorized access or modifications.
+
+- ML Attack Staging: Implement stricter access controls to sensitive ML modules to prevent staging of manipulative attacks. Monitor process execution and behaviors linked to staging an ML attack.
+
+- Impact: Monitor metrics tied to ML model performance to spot sudden spikes or drops which might be indicative of an ongoing attack. Incorporate robust incident response and recovery protocols to manage and mitigate the impact.
+
+Security measures should be implemented to detect and defend against such TTPs, ensuring resilient system security. Regular audits, updates, and employee training may form part of an effective cybersecurity strategy.

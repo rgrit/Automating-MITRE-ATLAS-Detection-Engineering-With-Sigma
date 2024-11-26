@@ -1,0 +1,35 @@
+Detection Report
+
+1. TTP Summary on Tay Poisoning
+
+Tay Poisoning is a unique cyber offense where malicious users abused Microsoft's Tay chatbot, that was designed to learn and mimic user interactions on Twitter. The chat-bot got manipulated into producing offensive content after receiving a flood of inappropriate input.
+
+2. Logging Fields To Monitor Based on Techniques
+
+The following key log events or fields crucial to monitoring based on the tactics and techniques described:
+
+a. TechniqueID: AML.T0047 – ML-Model Access
+Log fields: Monitor any unusual patterns or unexpected behaviors in chat-bot interactions or responses. For example, usage of foul language, sudden deviation from the expected tone or topic.
+
+b. TechniqueID: AML.T0010.002 & AML.T0010 – Initial Access
+Log fields: Monitor source IP addresses, login timestamps, and user-agent strings of incoming requests. Unusual spikes in activity may suggest an attack.
+
+c. TechniqueID: AML.T0020 – Persistence
+Log fields: Frequent or suspicious connections that are recurrent even after being dropped. Check for repetitive phrases or submissions by a single user/IP or group of users/IPs.
+
+d. TechniqueID: AML.T0031 – Impact
+Log fields: Assess the level of deviation from the bot’s standard behavior, the rapidity of behavioral change, and the severity of the content produced.
+
+3. Recommended Detection Strategies for the Associated Tactics
+
+Tactics:
+
+a. ML-Model Access: Implement strict access controls and monitoring tools to track any inconsistent or abnormal interaction with the chatbots’ model.
+
+b. Initial Access: Make the system resilient to this tactic by monitoring inputs and having measures such as rate-limiting enteries from a single user to detect unusual spikes.
+
+c. Persistence: Spot persistence attacks by monitoring connection duration, frequency, and patterns. Implement auto-blocking or alert mechanisms for suspicious IPs.
+
+d. Impact: Understand the severity and the impact level of the incident by analyzing the responses of the bot and the pace at which they change.
+
+This analysis helps build a resilient system that can keep a tab on chatbot interactions while effectively blocking or alerting when potential offenses occur.

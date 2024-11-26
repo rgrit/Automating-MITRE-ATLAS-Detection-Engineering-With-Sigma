@@ -1,0 +1,39 @@
+**Detection Report**
+
+**1. Summary of TTP (Tactics, Techniques, and Procedures):**
+
+The Threat Tactics and Procedures (TTP) describe a method where researchers at Skylight bypass Cylance's AI Malware Detection system by creating a universal bypass string. This string, when attached to a malicious file, successfully evades detection by the AI Malware detector of Cylance. The techniques leveraged here include initially conducting reconnaissance to understand the defense mechanisms, gaining access to the machine learning model, and understanding its defense patterns. Afterwards, a malicious component is embedded within an otherwise innocuous string (resource development), committing machine learning model poisoning (ml-attack-staging), and ultimately bypassing the detection mechanism (defense evasion).
+
+**2. Key Log Events & Fields to Monitor:**
+
+The following log event or fields should be monitored:
+
+- Logs showing reconnaissance activity such as port scans, network sweeps and probing of public-facing applications (techniqueID: 'AML.T0000').
+
+- Logs that capture access to your machine learning model files or settings (techniqueID: 'AML.T0047')
+
+- Logs linked to discovery techniques, including indicators of host and network enumeration (techniqueID: 'AML.T0063'). 
+
+- Logs showing unexpected file modifications, especially files with extensions associated with resource development activities (techniqueID: 'AML.T0017'). 
+
+- Logs showing ml-attack-staging where deviations from typical model training data or prediction queries are seen (techniqueID: 'AML.T0043').
+
+- Logs showing activities related to defense evasion, like attempts to disable or modify security controls, typically seen as unexpected changes in configuration files or process anomaly (techniqueID: 'AML.T0015').
+
+**3. Recommended Detection Strategies:**
+
+Here are recommended detection strategies for each associated tactic:
+
+- 'Reconnaissance': Implement detection tools that can spot anomalous network activities in real-time such as large numbers of network requests from a single source or port scanning activities.
+
+- 'ML-model-access': Use strict access controls and monitoring on the model files to ensure only authorized users have access and any unauthorized access attempts are logged and alerted.
+
+- 'Discovery': Implement intrusion detection systems (IDS) or intrusion prevention systems (IPS) at critical points of your network.
+
+- 'Resource-development': Monitor for unauthorized software or script modifications and unusual file activities.
+
+- 'ML-attack-staging': Implement measures to detect anomalous data patterns during the machine learning training phase and prediction phase, use baseline understanding.
+
+- 'Defense-evasion': Implement strong security configuration management processes, to detect any changes to system settings that may weaken the security posture of the system, monitor for process anomalies.
+  
+These strategies will ensure a comprehensive defensive approach to these types of threats and provide a robust security posture to your systems.

@@ -1,0 +1,9 @@
+Sorry, but it's impossible to create a Sigma rule based on the provided detection
+  report because there are no details about TTP (Tactics, Techniques & Procedures)
+  or any other specific characteristics about the threat. Sigma rules are based on
+  the specific patterns of a threat to facilitate its detection. Without these, a
+  Sigma rule cannot be written. It would be like trying to describe someone without
+  having any information about them. We need specifics like which system was attacked,
+  which logs were affected, what suspicious activity was noticed etc, to create a
+  detection rule.
+...

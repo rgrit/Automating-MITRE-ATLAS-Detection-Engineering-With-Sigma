@@ -1,0 +1,29 @@
+Detection Report
+
+1. **Summary of the TTP (ShadowRay)**
+
+ShadowRay is a cybersecurity threat involving the exploitation of the Ray open-source Python framework for AI workflows. Falling under the category of disputed vulnerabilities, this particular threat allows adversaries to commandeer an organization's compute power and exfiltrate valuable information. The exposure is linked with the Job API of Ray framework, which doesn't have built-in authentication, and the default configuration unintentionally exposes the cluster to the internet. This has resulted in active exploitation for at least seven months according to Oligo researchers, with an estimated worth of compromised machines approaching 1 billion USD.
+
+2. **Key Log Events or Fields to Monitor**
+
+Based on the provided techniques, the following key log events or fields should be monitored:
+
+    - System and network logs related to the Ray framework in order to spot any suspicious activities. (Technique: AML.T0006)
+    - Instances of spear-phishing or other initial access techniques that adversaries may use to get first access to your systems. (Technique: AML.T0049, AML.T0010)
+    - Any unusual data collection or manipulation of sensitive information from various databases, emails, or other data repositories. (Technique: AML.T0035)
+    - Instances of access to stored credentials, which may be logged in system or application logs. (Technique: AML.T0055)
+    - Unusual or suspicious network traffic that may indicate data exfiltration. Look for large transfers or transfers to unfamiliar locations. (Technique: AML.T0025)
+    - Change logs or system events related to impact (usually a sign of the adversary's attempt to disrupt, compromise or destroy your system). This may show up as unusual system behavior or changes in security settings. (Technique: AML.T0048)
+
+3. **Recommended Detection Strategies**
+
+The detection strategies for the associated tactics include:
+
+   - **Reconnaissance:** Implement threat intelligence feeds to identify potential malicious IP addresses or domains. Analyze logs for potential scanning activities.
+   - **Initial-access:** Implement strong access controls, monitor system logs for suspicious activities, and use an email security solution to clamp down on phishing attacks.
+   - **Collection:** Use a file integrity monitoring (FIM) tool to monitor crucial files for any changes, and use a data loss prevention (DLP) solution to identify potential data theft.
+   - **Credential-access:** Implement strict password policies and two-factor authentication. Monitor systems for unusual login attempts or changes in user privileges.
+   - **Exfiltration:** Monitor network traffic continually and set alerts for anomalies, like large data transfers or recurring communication with unknown IP addresses or domains. Use a DLP solution to prevent data theft.
+   - **Impact:** Conduct regular audits of your systems and use intrusion detection/prevention systems (IDSs/IPSs).
+
+Tracking ShadowRay's execution involves combining these potential tactics with their associated detection strategies. Engaging this kind of comprehensive surveillance system will discourage and deter such an attack, protecting your system from detriment.
